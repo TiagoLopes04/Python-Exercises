@@ -2,16 +2,10 @@ import random
 import string
 
 def generate_password():
-    #criar os possiveis caracteres para a password
-    letters = string.ascii_letters
-    numbers = string.digits
-    symbols = string.punctuation
-
-    #unificar todos em apenas uma variavel
-    chars = letters + numbers + symbols
+    #definir os caracteres possiveis na password
+    chars = string.ascii_letters + string.digits + string.punctuation
 
     password=""
-
     #criar o tamanho da password
     number_of_chars = random.randint(12, 30)
 
