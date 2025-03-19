@@ -24,6 +24,6 @@ def generate_password():
     random.shuffle(password_list)
 
     password = "".join(password_list)
-    print(password)
+    return password
 
-generate_password()
+print(generate_password())
