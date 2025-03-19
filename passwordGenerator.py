@@ -2,28 +2,24 @@ import random
 import string
 
 def generate_password():
+    #criar os possiveis caracteres para a password
     letters = string.ascii_letters
     numbers = string.digits
     symbols = string.punctuation
 
-    password_list = []
+    #unificar todos em apenas uma variavel
+    chars = letters + numbers + symbols
 
-    number_of_letters = random.randint(5, 10)
-    number_of_symbols = random.randint(5, 10)
-    number_of_numbers = random.randint(5, 10)
+    password=""
 
-    for i in range(number_of_letters):
-        password_list.append(random.choice(letters))
+    #criar o tamanho da password
+    number_of_chars = random.randint(12, 30)
 
-    for i in range(number_of_symbols):
-        password_list.append(random.choice(symbols))
+    #criar a password, escolhe um cacter em chars e adiciona a password number_of_chars vezes
+    for i in range(number_of_chars):
+        password+=random.choice(chars)
 
-    for i in range(number_of_numbers):
-        password_list.append(random.choice(numbers))
 
-    random.shuffle(password_list)
-
-    password = "".join(password_list)
     return password
 
 print(generate_password())
